@@ -70,13 +70,27 @@ body{
 /* for ipads */
 @media only screen and (min-width : 668px) and (max-width : 1024px){
   .abc{
-    margin-left: 100px;
+    margin:0 auto;
+    font-size:25px;
+    padding:5%;
   }
   .ab{
-    margin-left: 100px;
+    margin:0 auto;
   }
   .form-control{
-    width:500px;
+    width:100%;
   }
+  .button{
+    width:100%;
+  }
+  #pnr{
+    padding: 5%;
+    margin-top: 5%;
+  }
+  label{
+    font-size: 20px;
+    margin-top: 4%;
+  }
+
 
 }
