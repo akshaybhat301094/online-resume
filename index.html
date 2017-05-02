@@ -12,7 +12,6 @@
   <body align="center">
       <img src="images/logo.png" alt="logo">
     <h2>Welcome to American Airlines!!</h2>
-    <h1 id="ab"></h1>
     <form class="ab form-group">
       <label for="pnr">Speak PNR No. here:</label>
       <input class="form-control text-center" type="text" id="pnr" placeholder="speech output"/>
@@ -28,7 +27,6 @@
         var commands = {
           '*vail':function(vail){
             $('#pnr').val(vail);
-            $("#ab").text(vail);
           }
         };
         annyang.addCallback('end', function () {
