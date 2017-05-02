@@ -28,17 +28,16 @@
   </head>
   <body align="center" ng-controller="myController">
       <img src="images/logo.png" alt="logo">
-    <h2>Welcome to Americsdan Airlsdines!!</h2>
+    <h2>Welcome to American Airlines!!</h2>
     <form class="ab form-group">
       <label for="pnr">Speak PNR here:</label>
-      <input class="form-control text-center" type="text" id="pnr" placeholder="speech output"/>
+      <input class="form-control text-center" type="text" id="pnr" placeholder="speech output" ng-model="inp"/>
         <br>
         <button class="button" type="button" onclick="annyang.start({ autoRestart: false, continuous: false })" name="button">Tap to Speak</button>
     </form>
     <h2 class="abc">Find the status of Your flight</h2>
     <h2 id="aa"></h2>
     {{error}}
-    {{message}}
 
     <script type="text/javascript">
       if(annyang){
@@ -48,8 +47,7 @@
           }
         };
         annyang.addCallback('end', function () {
-          var rest = $("#pnr").val();
-          if(rest==pnr){
+          if(scp.inp==scp.pnr){
               $("#aa").text(message);
           }
           else{
@@ -65,4 +63,3 @@
     </script>
   </body>
 </html>
-
