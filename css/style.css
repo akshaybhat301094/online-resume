@@ -1,5 +1,5 @@
 .abc{
-  color:black;
+  color:cyan;
 }
 .ab{
   margin-left: 350px;
@@ -69,6 +69,9 @@ body{
     font-size: 20px;
     margin-top: 4%;
   }
+  #aa{
+  color:white;
+}
 }
 /* for ipads */
 @media only screen and (min-width : 668px) and (max-width : 1024px){
