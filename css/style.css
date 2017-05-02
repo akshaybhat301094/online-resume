@@ -47,6 +47,11 @@ body{
 
 /*for phones */
 @media only screen and (min-width : 250px) and (max-width : 667px){
+  body{
+  margin:0;
+  background: #f7f7f9;
+  background-image:none;
+  }
   .abc{
     margin:0 auto;
     font-size:25px;
