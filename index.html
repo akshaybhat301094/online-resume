@@ -11,7 +11,7 @@
   </head>
   <body align="center">
       <img src="images/logo.png" alt="logo">
-    <h2>Welcome to American Airlines!!!</h2>
+    <h2>Welcome to American Airlines!!</h2>
     <form class="ab form-group">
       <label for="pnr">Speak PNR here:</label>
       <input class="form-control text-center" type="text" id="pnr" placeholder="speech output"/>
@@ -23,10 +23,8 @@
 
     <script type="text/javascript">
       if(annyang){
-        var pnr;
         var details = function(vail){
             $('#pnr').val(vail);
-            pnr=vail;
           }
           details();
         };
@@ -40,7 +38,7 @@
           var res = JSON.stringify(response);
           var obj = JSON.parse(res);
           var rest = $("#pnr").val();
-          if(pnr==obj.pnr){
+          if(rest==obj.pnr){
               $("#aa").text(obj.hello);
 
           }
