@@ -1,8 +1,4 @@
 {
       "pnr":12345,
       "hello": "Flight is delayed"
-   },
-{
-      "pnr":54321,
-      "hello": "Flight is on time"
 }
