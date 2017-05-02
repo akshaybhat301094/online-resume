@@ -11,7 +11,7 @@
   </head>
   <body align="center">
       <img src="images/logo.png" alt="logo">
-    <h2>Welcome to American Airlines!!</h2>
+    <h2>Welcome to American Airlines!!!</h2>
     <form class="ab form-group">
       <label for="pnr">Speak PNR here:</label>
       <input class="form-control text-center" type="text" id="pnr" placeholder="speech output"/>
@@ -34,9 +34,6 @@
          if(rest==obj.pnr){
              $("#aa").text(obj.status);
          }
-         else{
-            $("#aa").text("Invalid");
-         }
         }
         });
         };
@@ -55,9 +52,6 @@
           var rest = $("#pnr").val();
           if(rest==obj.pnr){
               $("#aa").text(obj.hello);
-          }
-          else{
-             $("#aa").text("Invalid PNR");
           }
         }
       });
