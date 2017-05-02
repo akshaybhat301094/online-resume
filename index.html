@@ -22,26 +22,16 @@
     <h2 id="aa"></h2>
 
     <script type="text/javascript">
-      var cont;
       if(annyang){
-        var details = function(){
-          $.ajax({
-       url: "data.json",
-       success: function(response){
-         var res = JSON.stringify(response);
-         var obj = JSON.parse(res);
-         var rest = $("#pnr").val();
-         if(rest==obj.pnr){
-             $("#aa").text(obj.status);
-         }
-        }
-        });
+        var pnr;
+        var details = function(vail){
+            $('#pnr').val(vail);
+            pnr=vail;
+          }
+          details();
         };
         var commands = {
-          '*vail':function(vail){
-            $('#pnr').val(vail);
-          },
-          'show details': details
+          '*vail':details
         };
         annyang.addCallback('end', function () {
            $.ajax({
@@ -50,8 +40,12 @@
           var res = JSON.stringify(response);
           var obj = JSON.parse(res);
           var rest = $("#pnr").val();
-          if(rest==obj.pnr){
+          if(pnr==obj.pnr){
               $("#aa").text(obj.hello);
+
+          }
+          else{
+             $("#aa").text("Invalid PNR");
           }
         }
       });
