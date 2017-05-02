@@ -1,15 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
   <head>
     <meta charset="utf-8">
     <title>Voice Recognizer</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        var app = angular.module("myApp",[]);
+        app.controller("myController",[$scope,function(scp,http){
+          http.get("data.json").then(
+              //successfull ajax call
+              function(response){
+                scp.pnr = response.data.pnr;
+                scp.message = response.data.hello;
+              },
+              //failed ajax call
+              //observe that response parameter is optional
+              function(){
+                scp.error = 'Resource not found';
+              });
+        }]);
+    </script>
   </head>
-  <body align="center">
+  <body align="center" ng-controller="myController">
       <img src="images/logo.png" alt="logo">
     <h2>Welcome to American Airlines!!</h2>
     <form class="ab form-group">
@@ -22,7 +39,6 @@
     <h2 id="aa"></h2>
 
     <script type="text/javascript">
-      var cont;
       if(annyang){
         var commands = {
           '*vail':function(vail){
@@ -30,14 +46,9 @@
           }
         };
         annyang.addCallback('end', function () {
-           $.ajax({
-        url: "data.json",
-        success: function(response){
-          var res = JSON.stringify(response);
-          var obj = JSON.parse(res);
           var rest = $("#pnr").val();
-          if(rest==obj.pnr){
-              $("#aa").text(obj.hello);
+          if(rest==pnr){
+              $("#aa").text(message);
           }
           else{
              $("#aa").text("Invalid PNR");
@@ -52,3 +63,4 @@
     </script>
   </body>
 </html>
+
