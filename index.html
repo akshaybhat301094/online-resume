@@ -23,13 +23,11 @@
 
     <script type="text/javascript">
       if(annyang){
-        var details = function(vail){
+       
+        var commands = {
+          '*vail':function(vail){
             $('#pnr').val(vail);
           }
-          
-        };
-        var commands = {
-          '*vail':details
         };
         annyang.addCallback('end', function () {
            $.ajax({
