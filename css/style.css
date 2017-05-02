@@ -13,7 +13,7 @@ img {
 }
 body{
   margin:0;
-  background: #f7f7f9;
+  background: white;
   background-image: url(../images/american_airlines.jpg);
   background-size: stretch;
   background-repeat: no-repeat;
