@@ -37,7 +37,6 @@
     </form>
     <h2 class="abc">Find the status of Your flight</h2>
     <h2 id="aa"></h2>
-    {{error}}
 
     <script type="text/javascript">
       if(annyang){
@@ -48,7 +47,7 @@
         };
         annyang.addCallback('end', function () {
           if(scp.inp==scp.pnr){
-              $("#aa").text(message);
+              $("#aa").text(scp.message);
           }
           else{
              $("#aa").text("Invalid PNR");
